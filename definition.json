@@ -68,7 +68,8 @@
         "minimum": -2,
         "maximum": 2
       },
-      "display": "bipolar"
+      "display": "bipolar",
+      "control": 0
     },
     {
       "id": "tune",
@@ -79,7 +80,8 @@
         "minimum": -12,
         "maximum": 12
       },
-      "display": "semitones"
+      "display": "semitones",
+      "control": 1
     },
     {
       "id": "spread",
@@ -90,7 +92,8 @@
         "minimum": 0,
         "maximum": 1
       },
-      "display": "percent"
+      "display": "percent",
+      "control": 2
     },
     {
       "id": "volume",
@@ -101,7 +104,8 @@
         "minimum": 0,
         "maximum": 1
       },
-      "display": "percent"
+      "display": "percent",
+      "control": 3
     }
   ],
   "presets": {
@@ -148,6 +152,17 @@
   },
   "resources": {
     "voiceCapacity": 256,
-    "stereoOutput": 1
-  }
+    "stereoOutput": 1,
+    "sampleDisplay": 1,
+    "display": {
+      "stateBytes": 4,
+      "stateAlignment": 4,
+      "paths": 4,
+      "points": 64,
+      "nodes": 8,
+      "texts": 12,
+      "palette": 4
+    }
+  },
+  "press": "page"
 }

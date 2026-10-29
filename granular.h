@@ -3,6 +3,7 @@
 // audio callback neither allocates nor divides per sample.
 #pragma once
 #include <opxy/sample_engine.hpp>
+#include <opxy/sample_display.hpp>
 #include "tables.h"
 
 namespace granular {
@@ -94,4 +95,5 @@ inline i32 saturate16(i32 value) { return value > 32767 ? 32767 : value < -32767
 void initialize(Voice&, const opxy::SampleView&);
 void start(Voice&);
 void render_sample(Voice&, const opxy::SampleBlock&);
+void sample_visual(const Voice&, opxy::SampleVisual&);
 }

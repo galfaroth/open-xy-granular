@@ -200,4 +200,20 @@ void render_sample(Voice& voice, const opxy::SampleBlock& block) {
     for (u32 i = 0; i < kBlock * channels; ++i)
         block.output[i] = saturate16(block.output[i]) * 32768;
 }
+// Audio-side telemetry only: no drawing, allocation or mutation of voice state.
+void sample_visual(const Voice& voice, opxy::SampleVisual& output) {
+    output = opxy::SampleVisual{};
+    if (!voice.sample.data || voice.sample.frames < 2 || voice.sample.frames >= (1u << 20) ||
+        voice.sample.channels < 1 || voice.sample.channels > 2 ||
+        voice.sample.rate < 8000 || voice.sample.rate > 192000) return;
+    for (unsigned i = 0; i < kGrains; ++i) {
+        const Grain& grain = voice.grains[i];
+        const u32 frame = grain.position >> kFraction;
+        if (!grain.window_step || frame >= voice.sample.frames) continue;
+        opxy::SampleMarker& marker = output.markers[output.count++];
+        marker.frame = frame;
+        marker.phase_q16 = grain.window_phase >> 16;
+        marker.flags = grain.step < 0 ? 1u : 0u; // Bit 0 means reverse playback.
+    }
+}
 }

@@ -1,16 +1,13 @@
 {
   "schema": 1,
   "kind": "sample",
-  "description": "Bounded four-grain stereo sample cloud with position, spray and scanning; stock sample page.",
-  "identity": {
-    "engine": 36,
-    "page": 2
-  },
+  "description": "Four-grain stereo sample cloud with a live waveform and actual grain positions.",
   "presetDefaults": {
     "amp": {
       "attack": 2000,
       "release": 20000
     }
   },
-  "sdk": "1.0"
+  "sdk": "1.8",
+  "base": "sampler"
 }

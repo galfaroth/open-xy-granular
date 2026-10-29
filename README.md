@@ -1,12 +1,13 @@
 # Granular for Open-XY
 
-A stereo granular sample engine for OP-XY OS 1.2.0, maintained independently
+A stereo granular sample engine for OP-XY OS 1.2.1, maintained independently
 of the SDK. Four bounded grain slots per voice, integer DSP and no allocation
-or I/O in audio callbacks. Uses the public sample API and stock sample page 2.
+or I/O in audio callbacks. Uses the public sample and display APIs; the sampler base remains stock page 2. Preserve engine 36 through the build layout.
 
-Developed against Open-XY staging commit
-[`33b8652d12be95f7b693ea3b5e2ddb86ed2c4e82`](https://github.com/etcetc000/open-xy/commit/33b8652d12be95f7b693ea3b5e2ddb86ed2c4e82).
-CI pins that revision. No SDK patches are needed.
+This revision requires Open-XY SDK 1.8 with the sample-display extension. The
+local integration SDK is `../open-xy/local/sample-display-sdk`; the former pinned
+SDK cannot compile these display callbacks. Firmware and hardware validation are
+tracked separately from host tests.
 
 ## Sound and controls
 
@@ -27,11 +28,11 @@ stereo; stereo output preserves the source channels and applies grain pan.
 | 6 | Spread | Random grain pan |
 | 7 | Volume | Output level |
 
-The SDK supplies the parameter vector and LFO destinations. The stock sample
-page retains its own controls; the old encoder-click alternate controls are
-not part of this version. Stock sample assignment uses the SDK's multisampler
-routing, not the old custom `singleSample` extension. Device control/assignment
-behavior still needs hardware validation.
+The custom main page has two sets of four controls. Press any encoder to switch:
+page 1 is Position, Size, Density and Spray; page 2 is Scan, Tune, Spread and
+Volume. The header always shows the currently edited page and real-unit values.
+Use **Shift + Sample** to switch to the stock waveform/trim page; the custom main
+page handles grain controls. Sample assignment and stock trim remain SDK-owned.
 
 Cloud, Freeze, Scanner and Stutter are included. Dense clouds use inverse-overlap
 normalization, including coherent grains, with final half-scale output limiting.
@@ -41,23 +42,23 @@ retain the pitch and pan with which they started.
 
 ## Sample display
 
-The current SDK permits sample machines on stock page 2 or 7 only. This machine
-uses page 2 and its stock sample UI/waveform path. It does not draw an invented
-waveform or expose live grain positions. No custom sample-engine display callback
-or PCM/analysis input to the drawing API exists in the pinned SDK.
+The main page draws a bounded 128-column waveform snapshot of the assigned sample
+and up to four markers from the actual active grain positions. No animation clock
+or simulated grain cloud drives the markers. White markers play forward; pale
+blue markers play in reverse. The snapshot is an approximate sampled waveform,
+not a full peak scan, and the screen labels it accordingly.
 
-A waveform behind a custom grain overlay would need a separate SDK change:
-supported sample-engine screens plus a GUI-safe, bounded waveform snapshot tied
-to sample assignment/lifetime. Audio callbacks must never call drawing code or
-share unowned PCM pointers with it. The stock display path is supported by the
-SDK; this revision's appearance on a device has not yet been verified.
+Markers show **the latest started voice**, not all polyphonic voices. A marker's
+telemetry also includes its real window phase. Audio collects only bounded values;
+GUI drawing never reads PCM pointers or mutates voice state. Missing, empty and
+pending data are explicit states, and unavailable snapshots hide old graphics.
 
 ## Develop and check
 
 Keep this repository beside `../open-xy`. Run from here:
 
 ```sh
-python3 ../open-xy/sdk.py test --machine . --firmware
+python3 ../open-xy/local/sample-display-sdk/sdk.py test --machine . --firmware
 ```
 
 Tests cover sound, mono/stereo buffers, freeze/scan, source rates, reverse,
@@ -66,7 +67,7 @@ maximum overlap. `tests/performance.cpp` also runs a repeatable host benchmark.
 To see its timing directly, compile outside the checkout:
 
 ```sh
-c++ -std=c++11 -O2 -I ../open-xy/sdk/include -I . tests/performance.cpp -o /tmp/granular-bench
+c++ -std=c++11 -O2 -I ../open-xy/local/sample-display-sdk/sdk/include -I . tests/performance.cpp -o /tmp/granular-bench
 /tmp/granular-bench
 ```
 
@@ -92,13 +93,13 @@ three runs for the exact committed revision before catalog submission.
 Keep stock inputs and every firmware output outside all checkouts. From the SDK:
 
 ```sh
-python3 sdk.py build --machine ../open-xy-granular --profiling on --stock-os "$HOME/Library/Application Support/OPXY-SDK/private/stock-1.2.0/os.ldr" --out "$HOME/Library/Application Support/OPXY-SDK/private/builds/granular-001"
+python3 sdk.py build --machine ../open-xy-granular --profiling on --stock-os "$HOME/Library/Application Support/OPXY-SDK/private/stock-1.2.1/os.ldr" --out "$HOME/Library/Application Support/OPXY-SDK/private/builds/granular-001"
 ```
 
 Choose a fresh output folder each time. Build commands do not install anything.
 Use the previous package's `--layout` when preserving an existing firmware's
-machine numbers. This machine requests engine 36, page 2; collection layouts
-can allocate another engine number. The earlier prototype used page 84 and a
+machine numbers. This machine declares the sampler base (page 2). Use the existing layout to
+preserve engine 36; new collection layouts can allocate another engine number. The earlier prototype used page 84 and a
 private SDK extension: its projects are not promised to migrate unchanged.
 No catalog submission or device operations are included in this repository setup.
 
