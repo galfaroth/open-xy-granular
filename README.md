@@ -31,8 +31,10 @@ stereo; stereo output preserves the source channels and applies grain pan.
 The custom main page has two sets of four controls. Press any encoder to switch:
 page 1 is Position, Size, Density and Spray; page 2 is Scan, Tune, Spread and
 Volume. The header always shows the currently edited page and real-unit values.
-Use **Shift + Sample** to switch to the stock waveform/trim page; the custom main
-page handles grain controls. Sample assignment and stock trim remain SDK-owned.
+Press the first instrument page key again to toggle between Granular controls and
+the stock waveform/trim editor. Entering page 1 from another page starts with
+Granular controls. **Sample** opens the stock sample browser and returns to
+Granular controls after selection. Sample assignment and stock trim remain SDK-owned.
 
 Cloud, Freeze, Scanner and Stutter are included. Dense clouds use inverse-overlap
 normalization, including coherent grains, with final half-scale output limiting.

@@ -15,6 +15,7 @@ int main() {
     granular::display(state, input, frame);
     require(opxy::draw::valid(frame), "pending frame valid");
     require(!std::strcmp(frame.texts[9].chars, "SAMPLE DATA PENDING"), "pending explicit");
+    require(!std::strcmp(frame.texts[11].chars, "PAGE 1: CONTROLS / TRIM"), "physical page toggle help");
     available = true;
     granular::display(state, input, frame);
     require(!std::strcmp(frame.texts[9].chars, "NO SAMPLE ASSIGNED"), "empty sample explicit");

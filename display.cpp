@@ -56,7 +56,7 @@ void display(DisplayState& state, const opxy::draw::Input& input, Frame& output)
     }
     text(output, 8, 16 * unit, 59 * unit, unit, input.shown[0] >= 4 ? "GRAINS / PAGE 2 OF 2" : "GRAINS / PAGE 1 OF 2");
     text(output, 10, 16 * unit, 192 * unit, unit, "LATEST STARTED VOICE");
-    text(output, 11, 16 * unit, 212 * unit, unit, "SHIFT+SAMPLE: TRIM");
+    text(output, 11, 16 * unit, 212 * unit, unit, "PAGE 1: CONTROLS / TRIM");
     SampleDisplaySnapshot snapshot{};
     const bool available = sample_display_snapshot(input.track, snapshot);
     const bool waveform = available && snapshot.frames && (snapshot.flags & sample_waveform_ready);
