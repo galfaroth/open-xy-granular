@@ -1,13 +1,13 @@
 {
   "schema": 1,
   "kind": "sample",
-  "description": "Four-grain stereo sample cloud with a live waveform and actual grain positions.",
+  "description": "Four-grain stereo sample cloud over the sample's waveform.",
   "presetDefaults": {
     "amp": {
       "attack": 2000,
       "release": 20000
     }
   },
-  "sdk": "1.8",
+  "sdk": "1.10",
   "base": "sampler"
 }

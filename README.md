@@ -2,12 +2,14 @@
 
 A stereo granular sample engine for OP-XY OS 1.2.1, maintained independently
 of the SDK. Four bounded grain slots per voice, integer DSP and no allocation
-or I/O in audio callbacks. Uses the public sample and display APIs; the sampler base remains stock page 2. Preserve engine 36 through the build layout.
+or I/O in audio callbacks. It forks the stock sampler (`"base": "sampler"`) and
+draws its own screen over the sampler's page with the public
+[own screen](https://github.com/etcetc000/open-xy/blob/staging/docs/api.md#own-screen)
+and [sample overview](https://github.com/etcetc000/open-xy/blob/staging/docs/display.md#sample-overview)
+APIs. Preserve engine 36 through the build layout.
 
-This revision requires Open-XY SDK 1.8 with the sample-display extension. The
-local integration SDK is `../open-xy/local/sample-display-sdk`; the former pinned
-SDK cannot compile these display callbacks. Firmware and hardware validation are
-tracked separately from host tests.
+This revision requires Open-XY SDK 1.10 (`stockShift`). Firmware and hardware
+validation are tracked separately from host tests.
 
 ## Sound and controls
 
@@ -28,13 +30,14 @@ stereo; stereo output preserves the source channels and applies grain pan.
 | 6 | Spread | Random grain pan |
 | 7 | Volume | Output level |
 
-The custom main page has two sets of four controls. Press any encoder to switch:
+The screen has two sets of four controls. Press any encoder to switch:
 page 1 is Position, Size, Density and Spray; page 2 is Scan, Tune, Spread and
-Volume. The header always shows the currently edited page and real-unit values.
-Press the first instrument page key again to toggle between Granular controls and
-the stock waveform/trim editor. Entering page 1 from another page starts with
-Granular controls. **Sample** opens the stock sample browser and returns to
-Granular controls after selection. Sample assignment and stock trim remain SDK-owned.
+Volume. The shared two-page header shows both rows, the edited one bright, with
+real-unit values. Hold **Shift** and turn encoders 1 to 4 to edit the stock
+sampler's start, end, start and end together (window) and sample gain
+(`resources.stockShift`); the header's edited row then shows those values.
+The stock sample browser and recorder keep their own pages. Grains play between
+the sample's outer markers; the stock loop markers are not used.
 
 Cloud, Freeze, Scanner and Stutter are included. Dense clouds use inverse-overlap
 normalization, including coherent grains, with final half-scale output limiting.
@@ -42,34 +45,40 @@ This changes dense-preset loudness compared with the earlier prototype.
 Pitch and new-grain settings are sampled once per audio block; active grains
 retain the pitch and pan with which they started.
 
-## Sample display
+## Screen
 
-The main page draws a bounded 128-column waveform snapshot of the assigned sample
-and up to four markers from the actual active grain positions. No animation clock
-or simulated grain cloud drives the markers. White markers play forward; pale
-blue markers play in reverse. The snapshot is an approximate sampled waveform,
-not a full peak scan, and the screen labels it accordingly.
+The waveform is the sample's [overview](https://github.com/etcetc000/open-xy/blob/staging/docs/display.md#sample-overview):
+96 min/max bins across the whole sample, drawn as 128 columns, redrawn when its
+generation changes. Over it: the outer start and end markers (bright while Shift
+is held), the Position marker and Spray's reach either side of it.
 
-Markers show **the latest started voice**, not all polyphonic voices. A marker's
-telemetry also includes its real window phase. Audio collects only bounded values;
-GUI drawing never reads PCM pointers or mutates voice state. Missing, empty and
-pending data are explicit states, and unavailable snapshots hide old graphics.
+While notes are held the screen animates up to four grain markers, matching the
+engine's four grain slots. They are **simulated on the display side** from the
+controls the screen receives, not read from audio: grains start every
+size ÷ density at Position plus Scan's drift plus a pseudo-random Spray offset,
+move at the sample rate times Tune (as played at the root key), and swell and
+shrink with their window. White grains play forward, pale blue reversed. The
+simulation is deterministic, bounded and allocation-free; it stops spawning when
+notes are released, hides with reduced motion, and clears on a track change.
+No sample and a loading sample are explicit states.
 
 ## Develop and check
 
 Keep this repository beside `../open-xy`. Run from here:
 
 ```sh
-python3 ../open-xy/local/sample-display-sdk/sdk.py test --machine . --firmware
+python3 ../open-xy/sdk.py test --machine .
 ```
 
 Tests cover sound, mono/stereo buffers, freeze/scan, source rates, reverse,
 empty/short/long sources, changing trim, invalid inputs, parameter sweeps and
-maximum overlap. `tests/performance.cpp` also runs a repeatable host benchmark.
+maximum overlap; `tests/display_contract.cpp` covers the screen's empty,
+loading and loaded states, paging, Shift's row and the bounded grain cloud.
+`tests/performance.cpp` also runs a repeatable host benchmark.
 To see its timing directly, compile outside the checkout:
 
 ```sh
-c++ -std=c++11 -O2 -I ../open-xy/local/sample-display-sdk/sdk/include -I . tests/performance.cpp -o /tmp/granular-bench
+c++ -std=c++11 -O2 -I ../open-xy/sdk/include -I . tests/performance.cpp -o /tmp/granular-bench
 /tmp/granular-bench
 ```
 

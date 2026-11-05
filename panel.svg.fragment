@@ -1,27 +1,48 @@
 <g id="granular_display">
-<path d="M0 0 L480 0 L480 44 L0 44 Z" fill="#000000" stroke="#000000" stroke-width="0.1"/>
+<!-- SDK two-page header: keep this block before machine artwork below y=38. -->
+<path d="M0,0 L480,0 L480,38 L0,38 Z" fill="#000000"/>
+<path id="granular_node_4" transform="matrix(1 0 0 1 0 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#000000" stroke="#000000" stroke-width="0.5"/>
+<path id="granular_node_5" transform="matrix(1 0 0 1 60 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#323232" stroke="#323232" stroke-width="0.5"/>
+<path id="granular_node_6" transform="matrix(1 0 0 1 120 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#4B4B4B" stroke="#4B4B4B" stroke-width="0.5"/>
+<path id="granular_node_7" transform="matrix(1 0 0 1 180 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#646464" stroke="#646464" stroke-width="0.5"/>
+<path id="granular_node_8" transform="matrix(1 0 0 1 240 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#7D7D7D" stroke="#7D7D7D" stroke-width="0.5"/>
+<path id="granular_node_9" transform="matrix(1 0 0 1 300 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#969696" stroke="#969696" stroke-width="0.5"/>
+<path id="granular_node_10" transform="matrix(1 0 0 1 360 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#AFAFAF" stroke="#AFAFAF" stroke-width="0.5"/>
+<path id="granular_node_11" transform="matrix(1 0 0 1 420 0)" d="M0,0 L60,0 L60,20 L0,20 Z" fill="#CDCDCD" stroke="#CDCDCD" stroke-width="0.5"/>
+<text id="granular_text_0" transform="matrix(1 0 0 1 5 10)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="granular_text_1" transform="matrix(1 0 0 1 125 10)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="granular_text_2" transform="matrix(1 0 0 1 245 10)" fill="#000000" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="granular_text_3" transform="matrix(1 0 0 1 365 10)" fill="#000000" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="granular_text_4" transform="matrix(1 0 0 1 65 17.4)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="granular_text_5" transform="matrix(1 0 0 1 185 17.4)" fill="#CBCBCB" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="granular_text_6" transform="matrix(1 0 0 1 305 17.4)" fill="#000000" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="granular_text_7" transform="matrix(1 0 0 1 425 17.4)" fill="#000000" font-family="UniversNextPro-Light" font-size="20px">-</text>
+<text id="granular_text_8" transform="matrix(1 0 0 1 5 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="granular_text_9" transform="matrix(1 0 0 1 125 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="granular_text_10" transform="matrix(1 0 0 1 245 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="granular_text_11" transform="matrix(1 0 0 1 365 33)" fill="#5A5A5A" font-family="UniversNextPro-Light" font-size="10px">-</text>
+<text id="granular_text_12" transform="matrix(1 0 0 1 65 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="granular_text_13" transform="matrix(1 0 0 1 185 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="granular_text_14" transform="matrix(1 0 0 1 305 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
+<text id="granular_text_15" transform="matrix(1 0 0 1 425 33)" fill="#707070" font-family="UniversNextPro-Light" font-size="13px">-</text>
 <path id="granular_palette_0" d="M600 300 L601 300 L601 301 L600 301 Z" fill="#000000" stroke="#000000" stroke-width="0.5"/>
-<path id="granular_palette_1" d="M600 300 L601 300 L601 301 L600 301 Z" fill="#707070" stroke="#707070" stroke-width="0.5"/>
-<path id="granular_palette_2" d="M600 300 L601 300 L601 301 L600 301 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5"/>
-<path id="granular_palette_3" d="M600 300 L601 300 L601 301 L600 301 Z" fill="#B0D8F0" stroke="#B0D8F0" stroke-width="0.5"/>
-<path id="granular_node_0" d="M-48 -1 L-45 -1 L-42 -1 L-39 -1 L-36 -1 L-33 -1 L-30 -1 L-27 -1 L-24 -1 L-21 -1 L-18 -1 L-15 -1 L-12 -1 L-9 -1 L-6 -1 L-3 -1 L0 -1 L3 -1 L6 -1 L9 -1 L12 -1 L15 -1 L18 -1 L21 -1 L24 -1 L27 -1 L30 -1 L33 -1 L36 -1 L39 -1 L42 -1 L45 -1 L45 1 L42 1 L39 1 L36 1 L33 1 L30 1 L27 1 L24 1 L21 1 L18 1 L15 1 L12 1 L9 1 L6 1 L3 1 L0 1 L-3 1 L-6 1 L-9 1 L-12 1 L-15 1 L-18 1 L-21 1 L-24 1 L-27 1 L-30 1 L-33 1 L-36 1 L-39 1 L-42 1 L-45 1 L-48 1 Z" fill="none" stroke="#707070" stroke-width="0.5"/>
-<path id="granular_node_1" d="M-48 -1 L-45 -1 L-42 -1 L-39 -1 L-36 -1 L-33 -1 L-30 -1 L-27 -1 L-24 -1 L-21 -1 L-18 -1 L-15 -1 L-12 -1 L-9 -1 L-6 -1 L-3 -1 L0 -1 L3 -1 L6 -1 L9 -1 L12 -1 L15 -1 L18 -1 L21 -1 L24 -1 L27 -1 L30 -1 L33 -1 L36 -1 L39 -1 L42 -1 L45 -1 L45 1 L42 1 L39 1 L36 1 L33 1 L30 1 L27 1 L24 1 L21 1 L18 1 L15 1 L12 1 L9 1 L6 1 L3 1 L0 1 L-3 1 L-6 1 L-9 1 L-12 1 L-15 1 L-18 1 L-21 1 L-24 1 L-27 1 L-30 1 L-33 1 L-36 1 L-39 1 L-42 1 L-45 1 L-48 1 Z" fill="none" stroke="#707070" stroke-width="0.5"/>
-<path id="granular_node_2" d="M-48 -1 L-45 -1 L-42 -1 L-39 -1 L-36 -1 L-33 -1 L-30 -1 L-27 -1 L-24 -1 L-21 -1 L-18 -1 L-15 -1 L-12 -1 L-9 -1 L-6 -1 L-3 -1 L0 -1 L3 -1 L6 -1 L9 -1 L12 -1 L15 -1 L18 -1 L21 -1 L24 -1 L27 -1 L30 -1 L33 -1 L36 -1 L39 -1 L42 -1 L45 -1 L45 1 L42 1 L39 1 L36 1 L33 1 L30 1 L27 1 L24 1 L21 1 L18 1 L15 1 L12 1 L9 1 L6 1 L3 1 L0 1 L-3 1 L-6 1 L-9 1 L-12 1 L-15 1 L-18 1 L-21 1 L-24 1 L-27 1 L-30 1 L-33 1 L-36 1 L-39 1 L-42 1 L-45 1 L-48 1 Z" fill="none" stroke="#707070" stroke-width="0.5"/>
-<path id="granular_node_3" d="M-48 -1 L-45 -1 L-42 -1 L-39 -1 L-36 -1 L-33 -1 L-30 -1 L-27 -1 L-24 -1 L-21 -1 L-18 -1 L-15 -1 L-12 -1 L-9 -1 L-6 -1 L-3 -1 L0 -1 L3 -1 L6 -1 L9 -1 L12 -1 L15 -1 L18 -1 L21 -1 L24 -1 L27 -1 L30 -1 L33 -1 L36 -1 L39 -1 L42 -1 L45 -1 L45 1 L42 1 L39 1 L36 1 L33 1 L30 1 L27 1 L24 1 L21 1 L18 1 L15 1 L12 1 L9 1 L6 1 L3 1 L0 1 L-3 1 L-6 1 L-9 1 L-12 1 L-15 1 L-18 1 L-21 1 L-24 1 L-27 1 L-30 1 L-33 1 L-36 1 L-39 1 L-42 1 L-45 1 L-48 1 Z" fill="none" stroke="#707070" stroke-width="0.5"/>
-<path id="granular_node_4" d="M-0.5 -42 L0.5 -42 L0.5 42 L-0.5 42 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5"/>
-<path id="granular_node_5" d="M-0.5 -42 L0.5 -42 L0.5 42 L-0.5 42 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5"/>
-<path id="granular_node_6" d="M-0.5 -42 L0.5 -42 L0.5 42 L-0.5 42 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5"/>
-<path id="granular_node_7" d="M-0.5 -42 L0.5 -42 L0.5 42 L-0.5 42 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5"/>
-<text id="granular_text_0" font-family="UniversNextPro-Light" font-size="10" fill="#FFFFFF" stroke="none"> </text>
-<text id="granular_text_1" font-family="UniversNextPro-Light" font-size="10" fill="#FFFFFF" stroke="none"> </text>
-<text id="granular_text_2" font-family="UniversNextPro-Light" font-size="10" fill="#FFFFFF" stroke="none"> </text>
-<text id="granular_text_3" font-family="UniversNextPro-Light" font-size="10" fill="#FFFFFF" stroke="none"> </text>
-<text id="granular_text_4" font-family="UniversNextPro-Light" font-size="18" fill="#FFFFFF" stroke="none"> </text>
-<text id="granular_text_5" font-family="UniversNextPro-Light" font-size="18" fill="#FFFFFF" stroke="none"> </text>
-<text id="granular_text_6" font-family="UniversNextPro-Light" font-size="18" fill="#FFFFFF" stroke="none"> </text>
-<text id="granular_text_7" font-family="UniversNextPro-Light" font-size="18" fill="#FFFFFF" stroke="none"> </text>
-<text id="granular_text_8" font-family="UniversNextPro-Light" font-size="10" fill="#FFFFFF" stroke="none"> </text>
-<text id="granular_text_9" font-family="UniversNextPro-Light" font-size="10" fill="#FFFFFF" stroke="none"> </text>
-<text id="granular_text_10" font-family="UniversNextPro-Light" font-size="10" fill="#FFFFFF" stroke="none"> </text>
-<text id="granular_text_11" font-family="UniversNextPro-Light" font-size="10" fill="#FFFFFF" stroke="none"> </text>
+<path id="granular_palette_1" d="M600 300 L601 300 L601 301 L600 301 Z" fill="#5A5A5A" stroke="#5A5A5A" stroke-width="0.5"/>
+<path id="granular_palette_2" d="M600 300 L601 300 L601 301 L600 301 Z" fill="#9A9A9A" stroke="#9A9A9A" stroke-width="0.5"/>
+<path id="granular_palette_3" d="M600 300 L601 300 L601 301 L600 301 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5"/>
+<path id="granular_palette_4" d="M600 300 L601 300 L601 301 L600 301 Z" fill="#B0D8F0" stroke="#B0D8F0" stroke-width="0.5"/>
+<path id="granular_palette_5" d="M600 300 L601 300 L601 301 L600 301 Z" fill="#4B4B4B" stroke="#4B4B4B" stroke-width="0.5"/>
+<path id="granular_node_0" d="M-54.5 -1 L-51 -1 L-47.5 -1 L-44 -1 L-40.5 -1 L-37 -1 L-33.5 -1 L-30 -1 L-26.5 -1 L-23 -1 L-19.5 -1 L-16 -1 L-12.5 -1 L-9 -1 L-5.5 -1 L-2 -1 L1.5 -1 L5 -1 L8.5 -1 L12 -1 L15.5 -1 L19 -1 L22.5 -1 L26 -1 L29.5 -1 L33 -1 L36.5 -1 L40 -1 L43.5 -1 L47 -1 L50.5 -1 L54 -1 L54 1 L50.5 1 L47 1 L43.5 1 L40 1 L36.5 1 L33 1 L29.5 1 L26 1 L22.5 1 L19 1 L15.5 1 L12 1 L8.5 1 L5 1 L1.5 1 L-2 1 L-5.5 1 L-9 1 L-12.5 1 L-16 1 L-19.5 1 L-23 1 L-26.5 1 L-30 1 L-33.5 1 L-37 1 L-40.5 1 L-44 1 L-47.5 1 L-51 1 L-54.5 1 Z" fill="#4B4B4B" stroke="#4B4B4B" stroke-width="0.5"/>
+<path id="granular_node_1" d="M-54.5 -1 L-51 -1 L-47.5 -1 L-44 -1 L-40.5 -1 L-37 -1 L-33.5 -1 L-30 -1 L-26.5 -1 L-23 -1 L-19.5 -1 L-16 -1 L-12.5 -1 L-9 -1 L-5.5 -1 L-2 -1 L1.5 -1 L5 -1 L8.5 -1 L12 -1 L15.5 -1 L19 -1 L22.5 -1 L26 -1 L29.5 -1 L33 -1 L36.5 -1 L40 -1 L43.5 -1 L47 -1 L50.5 -1 L54 -1 L54 1 L50.5 1 L47 1 L43.5 1 L40 1 L36.5 1 L33 1 L29.5 1 L26 1 L22.5 1 L19 1 L15.5 1 L12 1 L8.5 1 L5 1 L1.5 1 L-2 1 L-5.5 1 L-9 1 L-12.5 1 L-16 1 L-19.5 1 L-23 1 L-26.5 1 L-30 1 L-33.5 1 L-37 1 L-40.5 1 L-44 1 L-47.5 1 L-51 1 L-54.5 1 Z" fill="#4B4B4B" stroke="#4B4B4B" stroke-width="0.5"/>
+<path id="granular_node_2" d="M-54.5 -1 L-51 -1 L-47.5 -1 L-44 -1 L-40.5 -1 L-37 -1 L-33.5 -1 L-30 -1 L-26.5 -1 L-23 -1 L-19.5 -1 L-16 -1 L-12.5 -1 L-9 -1 L-5.5 -1 L-2 -1 L1.5 -1 L5 -1 L8.5 -1 L12 -1 L15.5 -1 L19 -1 L22.5 -1 L26 -1 L29.5 -1 L33 -1 L36.5 -1 L40 -1 L43.5 -1 L47 -1 L50.5 -1 L54 -1 L54 1 L50.5 1 L47 1 L43.5 1 L40 1 L36.5 1 L33 1 L29.5 1 L26 1 L22.5 1 L19 1 L15.5 1 L12 1 L8.5 1 L5 1 L1.5 1 L-2 1 L-5.5 1 L-9 1 L-12.5 1 L-16 1 L-19.5 1 L-23 1 L-26.5 1 L-30 1 L-33.5 1 L-37 1 L-40.5 1 L-44 1 L-47.5 1 L-51 1 L-54.5 1 Z" fill="#4B4B4B" stroke="#4B4B4B" stroke-width="0.5"/>
+<path id="granular_node_3" d="M-54.5 -1 L-51 -1 L-47.5 -1 L-44 -1 L-40.5 -1 L-37 -1 L-33.5 -1 L-30 -1 L-26.5 -1 L-23 -1 L-19.5 -1 L-16 -1 L-12.5 -1 L-9 -1 L-5.5 -1 L-2 -1 L1.5 -1 L5 -1 L8.5 -1 L12 -1 L15.5 -1 L19 -1 L22.5 -1 L26 -1 L29.5 -1 L33 -1 L36.5 -1 L40 -1 L43.5 -1 L47 -1 L50.5 -1 L54 -1 L54 1 L50.5 1 L47 1 L43.5 1 L40 1 L36.5 1 L33 1 L29.5 1 L26 1 L22.5 1 L19 1 L15.5 1 L12 1 L8.5 1 L5 1 L1.5 1 L-2 1 L-5.5 1 L-9 1 L-12.5 1 L-16 1 L-19.5 1 L-23 1 L-26.5 1 L-30 1 L-33.5 1 L-37 1 L-40.5 1 L-44 1 L-47.5 1 L-51 1 L-54.5 1 Z" fill="#4B4B4B" stroke="#4B4B4B" stroke-width="0.5"/>
+<path id="granular_node_12" d="M-1.5 -36 L1.5 -36 L1.5 36 L-1.5 36 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5"/>
+<path id="granular_node_13" d="M-1.5 -36 L1.5 -36 L1.5 36 L-1.5 36 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5"/>
+<path id="granular_node_14" d="M-1.5 -36 L1.5 -36 L1.5 36 L-1.5 36 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5"/>
+<path id="granular_node_15" d="M-1.5 -36 L1.5 -36 L1.5 36 L-1.5 36 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5"/>
+<path id="granular_node_16" d="M-0.75 -56 L0.75 -56 L0.75 56 L-0.75 56 Z" fill="#9A9A9A" stroke="#9A9A9A" stroke-width="0.5"/>
+<path id="granular_node_17" d="M-0.5 -10 L0.5 -10 L0.5 10 L-0.5 10 Z" fill="#9A9A9A" stroke="#9A9A9A" stroke-width="0.5"/>
+<path id="granular_node_18" d="M-0.5 -10 L0.5 -10 L0.5 10 L-0.5 10 Z" fill="#9A9A9A" stroke="#9A9A9A" stroke-width="0.5"/>
+<path id="granular_node_19" d="M-0.5 -60 L0.5 -60 L0.5 60 L-0.5 60 Z" fill="#5A5A5A" stroke="#5A5A5A" stroke-width="0.5"/>
+<path id="granular_node_20" d="M-0.5 -60 L0.5 -60 L0.5 60 L-0.5 60 Z" fill="#5A5A5A" stroke="#5A5A5A" stroke-width="0.5"/>
+<text id="granular_text_16" font-family="UniversNextPro-Light" font-size="12" fill="#CBCBCB" stroke="none"> </text>
 </g>
